@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BMW | Feedback</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header-flex">
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="models.html">Models</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="feedback.html" class="active">Feedback</a></li>
+      </ul>
+    </nav>
+
+    <img src="logo.jpg" class="logo" />
+  </div>
+</header>
+
+<!-- HERO VIDEO -->
+<section class="feedback-hero">
+  <video autoplay muted loop>
+    <source src="light-01-stage-hd.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay">
+    <h1>We Value Your Feedback</h1>
+    <p>Your voice drives our excellence.</p>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="feedback-section">
+  <div class="container">
+
+    <h2 class="section-title">Tell Us What You Think</h2>
+
+    <form class="feedback-form">
+
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message..." required></textarea>
+
+      <button type="submit">Submit Feedback</button>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="thankYouModal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Thank You!</h2>
+    <p>Your feedback has been submitted.</p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <img src="logo.jpg" class="footer-logo">
+    <p class="footer-text">© 2025 BMW Motors. Excellence in Motion.</p>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+const form = document.querySelector(".feedback-form");
+const modal = document.getElementById("thankYouModal");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  modal.classList.remove("hidden");
+  form.reset();
+});
+
+function closeModal() {
+  modal.classList.add("hidden");
+}
+
+window.onclick = function (e) {
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+  }
+};
+</script>
+
+</body>
+</html>
